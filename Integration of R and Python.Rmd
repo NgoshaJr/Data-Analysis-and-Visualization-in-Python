@@ -1,0 +1,70 @@
+---
+title: "Integration of R and Python"
+author: "Mussa Ngosha: Data Scientist"
+date: "3/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Data scientists are highly interested to discover knowledge and extract insights from the data. R and Python are the robust languages that are frequently used when working with data. However, some Data scientists prefer to use only one language. Moreover, there is no a clear reason of why some Data Scientists do prefer only one language instead of the other?, to me I understand that, its an issue of Camps like R camps and Python camps whereby members are only competent in such either language. Furthermore, for those who are interested to use both R and Python, instead of coding in different notebooks, there is R package called 'reticulate': This package provides a significant number of tools that allows scientists to work with data using R and Python on the same environment:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+HOW TO SETUP R AND PYTHON ON THE SAME ENVIRONMENT
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+STEPS:
+1. Install Reticulate package
+
+   install.package('reticulate')
+
+
+2. Load the library
+
+   require(reticulate)
+   
+3. Connect R and python
+
+   use_python(Indicate the directory where python is installed)
+   
+   
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+```{r}
+### Example of Setting up R and Python 
+
+### Load reticulate package
+require(reticulate)
+
+### Use 'use_python' fuction to specify the python language to be connected
+# For Anaconda
+use_python("C:/Users/dlab/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Anaconda3 (64-bit)")
+# For python 3.7
+use_python("C:/Users/dlab/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.7")
+```
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Note: (i) On the same environment, every language will run on its own chunk like r chunk and python chunk.
+      (ii) If you are using Rmarkdown, Ctrl+Alt+I to create a chunk for r, if you want a python chunk, create below            by placing Ctrl+Alt+I, the edit the latter r to python
+      
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## R chunk
+```{r}
+### load packages
+require(readr)
+require(tidyverse)
+require(dplyr)
+```
+
+### Rython chunk
+```{python}
+### import packages
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
